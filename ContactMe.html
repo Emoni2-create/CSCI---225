@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+</head>
+<body>
+  <h1>Welcome to My Feedback Page</h1>
+
+  <!-- Embedded Video -->
+  <section>
+    <h2>About Me</h2>
+    <iframe width="560" height="315" src="<iframe width="560" height="315" src="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>" 
+            
+  </section>
+
+  <!-- Feedback Form -->
+  <section>
+    <h2>Send Me Your Feedback</h2>
+    <form name="feedback">
+      <label>First Name:
+        <input type="text" name="fname" placeholder="anonymous" required>
+      </label><br><br>
+
+      <label>Last Name:
+        <input type="text" name="lname" placeholder="anonymous" required>
+      </label><br><br>
+
+      <label>Email:
+        <input type="email" name="mail" placeholder="name@domain.com">
+      </label><br><br>
+
+      <label>Would you recommend this website?</label><br>
+      <input type="radio" name="recommend" value="yes"> Yes
+      <input type="radio" name="recommend" value="no"> No<br><br>
+
+      <label>Favorite Website:
+        <select name="favorite">
+          <option value="Google">Google</option>
+          <option value="Facebook">Facebook</option>
+          <option value="Twitter">Twitter</option>
+          <option value="Time">Time</option>
+        </select>
+      </label><br><br>
+
+      <label>Rate this website (1–10):
+        <input type="range" name="rating" min="1" max="10">
+      </label><br><br>
+
+      <label>Additional Comments:
+        <textarea name="comment" rows="4" cols="50"></textarea>
+      </label><br><br>
+
+      <!-- Extra HTML5 Features -->
+      <label>Phone Number:
+        <input type="tel" name="phone" placeholder="123-456-7890">
+      </label><br><br>
+
+      <label>Website URL:
+        <input type="url" name="website" placeholder="https://examples.com">
+      </label><br><br>
+
+      <label>Date of Visit:
+        <input type="date" name="visitDate">
+      </label><br><br>
+
+      <input type="submit" value="Submit Feedback">
+    </form>
+  </section>
+</body>
+</html>
