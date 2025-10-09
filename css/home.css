@@ -1,0 +1,295 @@
+:root {
+    --color-body-bg: hsl(200, 27%, 96%);
+    --color-body-bg-opacity: hsl(200, 27%, 96%, 0.8);
+    --color-body-text: hsl(0, 38%, 23%);
+    --color-page1-text: hsl(101, 22%, 15%);
+    --color-page1-bg: hsla(0, 15%, 95%, 0.5);
+    --color-page2-text: hsl(90, 16%, 12%);
+    --color-page2-bg: hsl(309, 44%, 74%);
+    --color-page3-bg: hsl(120, 29%, 95%);
+    --color-page3-text: hsl(204, 23%, 17%);
+    --color-bottom-bar-bg: hsl(204, 56%, 60%, 0.95);
+    --color-pages-bg: hsl(204, 56%, 60%, 0.5);
+    --color-bottom-bar-text: hsl(0, 38%, 23%);
+    --sidebar-color: hsl(204, 26%, 81%);
+    --font1-font: 'Arial Black', Gadget, sans-serif;
+    --font2-font: 'Courier New', Courier, monospace;
+    --font3-font: 'Times New Roman', Times New Roman, serif;
+    --full-height: 100vh;
+    --full-width: 100vw;
+    --page-height: 50%;
+    --page-width: 50%;
+    --page-top: 25vh;
+    --bar-height: 50vh;
+    --page-body-image: url("../img/mountain-forest-background-qxuvtl6d9gdx9rcr.jpg");
+    --font-minecraft: "VT323", monospace;
+}
+.introduction,
+.assignment,
+.portfolio,
+.schedule,
+.contact,
+.address {
+    display: none;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    background-color: var(--color-body-bg-opacity);
+    font-family: var(--font-minecraft);
+    font-weight: 100;
+    z-index: 1000;
+    left: 25%;
+    width: 50%;
+    top: 25%;
+}
+.introduction{
+    position: absolute;
+    float: left;
+    width: 38%;
+    top: var(--page-top);
+    color: var(--color-bottom-bar-text);
+    z-index: 0;    
+    height: 100px;
+}
+.introduction img{
+    position: relative;
+    top: 10px;
+    float: left;
+    width: 25%;
+    object-fit: cover;
+    border: 3px solid #261a1a;
+    padding: 10px;
+    left: 10px;
+}
+
+.navbar{
+    position: fixed;
+    width: var(--page-width);
+    top: 0;
+    left: 25%;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-body-bg);
+    font-size: large;
+}
+.navbar ul li {
+    display: inline-block;
+    margin-right: 3%;
+    
+}
+.introduction-title, 
+.portfolio-title,
+.assignment-title,
+.contact-title,
+.schedule-title {
+    z-index: 4;
+    cursor: pointer;
+    display: block;
+    margin: 3px;
+    border-radius: 20% 20% 20% 20%;
+    border-color: hsl(204, 13%, 8%);
+    border-style: solid;
+    background-color: var(--color-body-bg-opacity);
+}
+/* Position h1 absolutely in each section */
+.introduction-title {
+    position: absolute;
+    left: 1%;
+    top: 20%;
+    
+}
+.portfolio-title {
+    position: absolute;
+    left: 64%;
+    top: 20%;
+}
+
+.assignment-title {
+    position: absolute;
+    left: 64%;
+    top: 50%;
+}
+
+.contact-title {
+    position: absolute;
+    left: 25%;
+    top: 70%;
+}
+
+.schedule-title {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+}
+
+.introduction-title:hover + .introduction  {
+    display: block;
+    z-index: 100;
+}
+.assignment-title:hover + .assignment  {
+    display: block;
+    z-index: 1000;
+    position: relative;
+    top: 300px;
+}
+.portfolio-title:hover + .portfolio  {
+    display: block;
+    z-index: 1000;
+}
+.schedule-title:hover + .schedule  {
+    display: block;
+    z-index: 1000;
+}
+.contact-title:hover + .address {
+    display: block;
+    z-index: 1000;
+}
+
+.portfolio {
+    position: absolute;
+    color: var(--color-body-text);
+    font-size: medium;
+    z-index: 1;
+}
+.assignment {
+    position: absolute;
+    color: var(--color-body-text);
+    font-size: medium;
+    width: 200px;
+    z-index: 1;
+}
+.address {
+    position: absolute;
+    color: var(--color-body-text);
+    font-size: medium;
+    z-index: 1;
+    width: 200px;
+}
+.schedule {
+    position: absolute;
+    color: var(--color-body-text);
+    font-size: medium;
+    z-index: 1;
+    border: 3px solid #261a1a;
+    padding: 10px;
+    vertical-align: middle;
+    empty-cells: show;
+    z-index: 1000;
+    width: 500px;
+}
+
+h1 {
+    font-family: var(--font1-font);
+    font-size: xx-large;
+    margin: 10px 0;
+    padding: 10px;
+    color: var(--color-page1-text);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    width: 100vw;
+    color: var(--color-bottom-bar-text);
+    background-color: var(--color-bottom-bar-bg);
+    font-size: small;
+    z-index: 100;
+}
+body {
+    background-image: var(--page-body-image);
+    background-size: 100%, 100%;      /* Makes the image cover the whole background */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+p {
+    line-height: 1.9ex;
+    text-align: justify;
+}
+a {
+    text-decoration: none;
+    color: var(--color-body-text);
+    text-decoration: line-through;
+}
+
+a:hover {
+    text-decoration: wavy underline;
+}
+
+
+
+@keyframes change-color {
+    from {
+        color: hsl(130, 36%, 43%);
+    }
+    20% {
+        color: hsl(60, 46%, 34%);
+    }
+    40% {
+        color: hsl(120, 33%, 36%);
+    }
+    60% {
+        color: hsl(240, 74%, 44%);
+    }
+    80% {
+        color: hsl(350, 64%, 53%);
+    }
+    to {
+        color: hsl(71, 67%, 68%);
+    }
+}
+
+p ::first-letter{
+    font-weight: bold;
+    font-size : 110%;
+}
+.introduction p {
+    animation: change-color 3s infinite running;
+}
+tr:nth-child(even) {
+    background-color: var(--color-page2-bg);
+}
+
+h1 {
+    transition: 10s;
+}
+h1:hover {
+    transform: rotate(-100deg);
+}
+
+p {
+    transition: 5s;
+}
+p:hover {
+    position: relative;
+    transform: scale(1.1);
+    left: 100px;
+}
+.introduction:hover ,
+.assignment:hover ,
+.portfolio:hover ,
+.schedule:hover ,
+.contact,
+.address:hover {
+    background-color: var(--color-page3-bg);
+    color: var(--color-page3-text);
+    transition: 1s;
+    display: block;
+    z-index: 1000;
+}
+
+.portfolio li:first-of-type {
+    box-shadow: 1px 1px 5px rgb(37, 30, 30);
+}
+#title {
+    font-family: var(--font1-font);
+    font-size: xx-large;
+    margin: 10px 0;
+    padding: 10px;
+    color: var(--color-page1-text);
+    position: absolute;
+    top: 5%;
+}
+

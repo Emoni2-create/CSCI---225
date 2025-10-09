@@ -1,141 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<style>
-    .navbar {
-      background-color:  hsl(135, 58%, 49%);
-      padding: 15px;
-      border: 1px solid  hsl(135, 58%, 49%) ;
-      margin-bottom: 20px;
-    }
-</style>
-  <meta charset="UTF-8">
-  <title> CSCI225 Homepage of Emoni Wilson </title>
-
+    <title>CSCI225 Homepage of Emoni Wilson</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single+Ink:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="navbar">
-    <h2>Navigation</h2>
-    <ul>
-      <li><a href="https://www.usca.edu" target="_blank"> USCA Main Website</a></li>
-      <li><a href="#assignments">Assignment Area</a></li>
-      <li><a href="#contact">Contact Information Section</a></li>
-      <li><a href="https://www.w3schools.com" target="_blank">W3Schools (HTML Help)</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></li>
-    </ul>
-  </div>
-</body>
+<div class="navbar">
+    <ul> 
+        <li><a href="https://www.usca.edu">USCA Website</a></li>
+        <li><a href="#assignment">Assignment</a></li>
+        <li><a href="#address">Contact Information</a></li>
+        <li><a href="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2">Lazy Video</a></li>
+        <li><a href="https://blackboard.sc.edu/">Blackboard</a></li>
+        <li><a href="ContactMe.html">Contact Me</a></li>
+    </ul> 
+</div>
+<p id="title">Welcome to my <b>CSCI225</b> Homepage!</p>
+<h1 class = "section-title introduction-title"> Introduction</h1>
+<div class="introduction">
+<p>This is my homepage for <b>CSCI225</b>. Here you will find links to my assignments, portfolio, and schedule. <br>
+Hello, my name is Emoni Wilson. I go to University of South Carolina Aiken. I major in Computer Science minor in Business.
+With my degree, I would like to get into Government Tech and <em>Software Engineering</em>.<br>
+Here is a picture of me:</p>
+<img src="img/IMG_4806.jpeg" alt="Profile Picture">
+</div>
 
-<body> 
-    <div class="Introduction">
-        <h1>Introduction</h1>
-        <p>  <img src="img/IMG_4806.jpeg"alt="Student Profile Picture" width="300">
-        <p>
-            Hello, my name is Emoni Wilson. I go to University of South Carolina Aiken. I major in Computer Science minor in Business.
-            With my degree, I would like to get into Government Tech. 
-        </p>
-    </div>
-      <!-- Assignment Section -->
-    <div class="assignment" id="assignments">
-        <h1>Assignments</h1>
-        <ol>
-            <li><a href="doc/Assignment1.pdf" target="_blank">Assignment 1</a></li>
-            <li><a href="doc/Assignment2.pdf" target="blank">Assignment 2</li></a> <!DOCTYPE html>
-
-  <p>Check out my video and send feedback: <a href="ContactMe.html">Contact Me</a></p>
-
-            <li>Assignment 3: Complete the worksheet</li>
-        </ol>
-    </div>
-
-    <!-- Portfolio Section -->
-    <div class="portfolio" id="portfolio">
-        <h1>Portfolio</h1>
+<h1 class="section-title assignment-title">Assignment</h1>
+<div class="assignment">
+<ol> 
+    <li> <a href="doc/assignment1.pdf">Assignment 1</a></li>
+    <li> <a href="doc/assignment2.pdf">Assignment 2</a>
         <ul>
-         <li>
-          <strong>Weather App</strong><br>
-      A responsive web application that displays real-time weather data using the OpenWeather API. Built with HTML, CSS, JavaScript, and integrated with Bootstrap for styling.
-    </li>
-    <li>
-      <strong>Task Manager</strong><br>
-      A full-stack project using Node.js, Express, and MongoDB. Features user authentication, CRUD operations, and RESTful API endpoints.
-    </li>
-    <li>
-      <strong>Personal Blog</strong><br>
-      A static blog site powered by Jekyll and hosted on GitHub Pages. Includes custom themes, Markdown-based posts, and SEO optimization.
-    </li>
+            <li><a href="ContactMe.html">Contact Me</a></li>
         </ul>
-    </div>
+    </li>
+    <li> <a href="doc/assignment3.pdf">Assignment 3</a></li>
+</ol>
+</div>
 
-    <!-- Contact Information Section -->
-    <div id="contact">
-        <p>Contact Information</p>
-<address>
-  Email: <a href="mailto:Emoniw@usca.edu">Emoniw@usca.edu</a><br>
-  GitHub: <a href="https://github.com/Emoni2-create/CSCI---225" target="_blank">github.com/Emoni2-create/CSCI---225</a><br>
-</address>
-
-    </div>
+<h1 class = "section-title portfolio-title">Portfolio - Projects list</h1>
+<div class="portfolio">
+        <ul>
+        <li>          <strong>Weather App</strong><br>
+      A responsive web application that displays real-time weather data using the OpenWeather API. Built with HTML, CSS, JavaScript, and integrated with Bootstrap for styling.</li>
+       
+    </ul>
+</div>
+<h1 class="section-title contact-title">Contact Information</h1>
+<address class="address">
     
-    <div class="schedule">
-    <h1>Schedule</h1>
-    <table border="1" cellpadding="8" cellspacing="0">
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Time</th>
-          <th>Course</th>
-          <th>Instructor</th>
-          <th>Location</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Monday</td>
-          <td><time datetime="12:00">12:00 PM</time> – <time datetime="1:30">1:30 PM</time></td>
-          <td><mark>Web Development</mark></td>
-          <td>Prof. Smith</td>
-          <td>Room 218</td>
-          <td>Focus on <abbr title="HyperText Markup Language">HTML</abbr> & CSS basics</td>
-        </tr>
-        <tr>
-          <td>Tuesday</td>
-          <td><time datetime="11:00">11:00 AM</time> – <time datetime="12:30">12:30 PM</time></td>
-          <td>Data Structures</td>
-          <td>Dr. Lee</td>
-          <td>Room 202</td>
-          <td>Review <abbr title="Math Lab">LIFO</abbr> and <abbr title="Math Lab">FIFO</abbr> concepts</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td><time datetime="2:00">2:00 PM</time> – <time datetime="3:30">3:30 PM</time></td>
-          <td>Design Theory</td>
-          <td>Ms. Rivera</td>
-          <td>Room 303</td>
-          <td>Inspired by <cite>The Elements of Design</cite></td>
-        </tr>
-        <td>Thursday</td>
-          <td><time datetime="12:00">12:00 PM</time> – <time datetime="1:30">1:30 PM</time></td>
-          <td><mark>Web Development</mark></td>
-          <td>Prof. Smith</td>
-          <td>Room 218</td>
-          <td>Focus on <abbr title="HyperText Markup Language">HTML</abbr> & CSS basics</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-   
-   <!-- Footer Section -->
-<footer>
-  <p>&copy; 2025 Emoni Wilson. All rights reserved.</p>
-</footer>
-  
+    <p><b>emoniw@usca.edu</b></p>
+    <p>Emoni Wilson</p>
+    <p>mcdonald land 123</p>
+    <p>Pepsi, CA 0123</p>
+</address>
+<h1 class="section-title schedule-title">Schedule</h1>
+<div class="schedule">
+<table border = "1"> 
+    <tr>
+        <th colspan="6"><b><mark>Fall 2025 Schedule, CSCI225</mark></b></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+    </tr>
+    <tr>
+        <td>10:00 AM - 12:00 PM</td>        
+        <td>CSCI225</td>                
+        <td></td>
+        <td>CSCI225</td>
+        <td></td>
+        <td rowspan="4">CSCI225 Lab</td>
+    </tr>
+    <tr>
+        <td>1:00 PM - 2:30 PM</td>
+        <td rowspan="2"> English 124</td>
+        <td>Engli214</td>
+        <td rowspan="2">English 124</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>3:00 PM - 5:00 PM</td>
+        <td>Spanish 143</td>
+        <td>Spaniah 143</td>
+    </tr>
+    <tr>
+        <td>12:30 PM - 1:30 PM</td>
+        <td colspan="5">Lunch</td>
+    </tr>
+    <tr>
+    <td>1:30 PM - 3:00 PM</td>
+    <td></td>
+    <td>CSCI215</td>
+    <td></td>
+    <td>English 124</td>
+    <td></td>
+</tr>
+<tr>
+    <td>5:00 PM - 7:00 PM</td>    
+    <td rowspan = "2">Nudy Class 210</td>
+    <td></td>
+    <td rowspan = "2">Nudy Class 210</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>8:00 PM - 9:00 PM</td>
+    <td>Study Group</td>    
+    <td>CSCI225 Review</td>
+    <td></td>
+</tr>
+<tr>
+    <td>9:00 AM - 10:00 AM</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Brunch</td>
+</tr>
+</table> 
+</div>
 
+<footer>
+    <p>Copyright &copy; 2025 Emoni Wilson</p>
+</footer>
 </body>
 </html>
-  
-
-
