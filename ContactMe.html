@@ -3,134 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact Me</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      padding-top: 70px;
+    }
+    .container-xxl {
+      background-color: hsl(135, 80%, 32%);
+      color: hsl(177, 86%, 37%);
+      padding: 0;
+    }
+    .navbar {
+      background-color: hsl(80, 23%, 46%);
+      color: hsl(0, 38%, 87%);
+    }
+    iframe {
+      margin: 20px 0;
+      border-top: 10px solid hsl(202, 70%, 65%);
+      border-left: 22px solid hsl(202, 64%, 66%);
+      border-right: 20px solid hsl(189, 66%, 64%);
+      border-bottom: 22px solid hsl(197, 91%, 69%);
+      box-shadow: 5px 5px 10px hsl(135, 58%, 49%);
+    }
+  </style>
 </head>
 <body>
-  <div class="container-xxl">
-    <nav class="navbar navbar-expand-lg bg-light mb-4">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="https://www.usca.edu" target="_blank">USCA Main Website</a></li>
-        <li class="nav-item"><a class="nav-link" href="#assignments">Assignment Area</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact Information Section</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://www.w3schools.com" target="_blank">W3Schools (HTML Help)</a></li>
-        <li class="nav-item"><a class="nav-link" href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a></li>
-      </ul>
-    </nav>
-    <style type="text/css">
-        .container-xxl{
-          background-color: hsl(135, 80%, 32%);
-          color: hsl(177, 86%, 37%);
-          padding:0;
-        }
-          .navbar {
-            background-color: hsl(80, 23%, 46%);
-            color: hsl(0, 38%, 87%);
-          }
-          iframe{
-            margin: 20px;
-            border-top: 10px solid hsl(202, 70%, 65%);
-            border-left: 22px solid hsl(202, 64%, 66%);
-            border-right: 20px solid hsl(189, 66%, 64%);
-            border-bottom: 22px solid hsl(197, 91%, 69%);
-            box-shadow: 5px 5px 10px hsl(135, 58%, 49%);;
-          }
+  <!-- Fixed Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold" href="#">Contact Me</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-semibold">
+          <li class="nav-item"><a class="nav-link" href="https://www.usca.edu" target="_blank">USCA Main Website</a></li>
+          <li class="nav-item"><a class="nav-link" href="#assignments">Assignment Area</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact Info</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://developer.mozilla.org/en-US/" target="_blank">MDN Docs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  </style>
-    <h1>Welcome to My Feedback Page</h1>
+  <!-- Main Content -->
+  <div class="container-xxl mt-4">
+    <h1 class="mb-4">Welcome to My Feedback Page</h1>
+    <div class="row">
+      <!-- Contact Form -->
+      <div class="col-md-6">
+        <form name="feedback">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="fN" name="fname" placeholder="anonymous" required>
+            <label for="fN">First Name</label>
+          </div>
 
-    <!-- Embedded Video -->
-    <section class="mb-4">
-      <div class="row">
-        <div class="col">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="anonymous" required>
+            <label for="lname">Last Name</label>
+          </div>
+
+          <div class="form-floating mb-1">
+            <input type="email" class="form-control" id="mail" name="mail" placeholder="name@domain.com">
+            <label for="mail">Email</label>
+          </div>
+          <small class="form-text text-muted mb-3 d-block">Your email will remain private.</small>
+
+          <div class="mb-3">
+            <label class="form-label">Would you recommend this website?</label><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="recommend" id="yes" value="yes">
+              <label class="form-check-label" for="yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="recommend" id="no" value="no">
+              <label class="form-check-label" for="no">No</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="favorite" class="form-label">Favorite Website</label>
+            <select class="form-select form-control" id="favorite" name="favorite">
+              <option value="Google">Google</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Twitter">Twitter</option>
+              <option value="Time">Time</option>
+              <option value="Bluesky">Bluesky</option>
+              <option value="Discord">Discord</option>
+              <option value="Youtube">Youtube</option>
+              <option value="Twitch">Twitch</option>
+              <option value="Ko-fi">Ko-fi</option>
+              <option value="Patreon">Patreon</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Rate this website (1–10)</label>
+            <input type="range" class="form-range" name="rating" min="1" max="10" value="5" list="markers">
+            <datalist id="markers">
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+            </datalist>
+          </div>
+
+          <div class="mb-3">
+            <label for="comment" class="form-label">Additional Comments</label>
+            <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="I suggest..."></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
+          </div>
+
+          <div class="mb-3">
+            <label for="website" class="form-label">Website URL</label>
+            <input type="url" class="form-control" id="website" name="website" placeholder="https://example.com">
+          </div>
+
+          <div class="mb-3">
+            <label for="visitDate" class="form-label">Date of Visit</label>
+            <input type="date" class="form-control" id="visitDate" name="visitDate">
+          </div>
+
+          <div class="mb-3">
+            <label for="pet" class="form-label">(Optional) Upload a picture of your pet</label>
+            <input type="file" class="form-control" id="pet" name="pet">
+          </div>
+
+          <div class="mb-3">
+            <input type="submit" class="btn btn-primary" value="Submit Feedback">
+            <input type="reset" class="btn btn-secondary" value="Reset Form">
+          </div>
+        </form>
+      </div>
+
+      <!-- Embedded Video -->
+      <div class="col-md-6">
+        <div class="border p-3">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
-    </section>
-
-    <!-- Feedback Form -->
-    <section>
-      <form name="feedback">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="fN" name="fname" placeholder="anonymous" required>
-          <label for="fN">First Name</label>
-        </div>
-
-        <div class="mb-3">
-          <label for="lname" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="lname" name="lname" placeholder="anonymous" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="mail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="mail" name="mail" placeholder="name@domain.com">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Would you recommend this website?</label><br>
-          <input type="radio" name="recommend" value="yes"> Yes
-          <input type="radio" name="recommend" value="no"> No
-        </div>
-
-        <div class="mb-3">
-          <label for="favorite" class="form-label">Favorite Website</label>
-          <select class="form-select" id="favorite" name="favorite">
-            <option value="Google">Google</option>
-            <option value="Facebook">Facebook</option>
-            <option value="Twitter">Twitter</option>
-            <option value="Time">Time</option>
-            <option value="Bluesky">Bluesky</option>
-            <option value="Discord">Discord</option>
-            <option value="Youtube">Youtube</option>
-            <option value="Twitch">Twitch</option>
-            <option value="Ko-fi">Ko-fi</option>
-            <option value="Patreon">Patreon</option>
-          </select>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Rate this website (1–10)</label>
-          <input type="range" class="form-range" name="rating" min="1" max="10" value="5" list="markers">
-          <datalist id="markers">
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
-            <option value="8">8</option>
-          </datalist>
-        </div>
-
-        <div class="mb-3">
-          <label for="comment" class="form-label">Additional Comments</label>
-          <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="I suggest..."></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
-        </div>
-
-        <div class="mb-3">
-          <label for="website" class="form-label">Website URL</label>
-          <input type="url" class="form-control" id="website" name="website" placeholder="https://examples.com">
-        </div>
-
-        <div class="mb-3">
-          <label for="visitDate" class="form-label">Date of Visit</label>
-          <input type="date" class="form-control" id="visitDate" name="visitDate">
-        </div>
-
-        <div class="mb-3">
-          <label for="pet" class="form-label">(Optional) Please insert a picture of your cute pet</label>
-          <input type="file" class="form-control" id="pet" name="pet">
-        </div>
-
-        <div class="mb-3">
-          <input type="submit" class="btn btn-primary" value="Submit Feedback">
-          <input type="reset" class="btn btn-secondary" value="Reset Form">
-        </div>
-      </form>
-    </section>
+    </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
-</html>
