@@ -1,156 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Me</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
-    body {
-      padding-top: 70px;
-    }
-    .container-xxl {
-      background-color: hsl(135, 80%, 32%);
-      color: hsl(177, 86%, 37%);
-      padding: 0;
-    }
-    .navbar {
-      background-color: hsl(80, 23%, 46%);
-      color: hsl(0, 38%, 87%);
-    }
-    iframe {
-      margin: 20px 0;
-      border-top: 10px solid hsl(202, 70%, 65%);
-      border-left: 22px solid hsl(202, 64%, 66%);
-      border-right: 20px solid hsl(189, 66%, 64%);
-      border-bottom: 22px solid hsl(197, 91%, 69%);
-      box-shadow: 5px 5px 10px hsl(135, 58%, 49%);
-    }
-  </style>
+    <title>feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style type="text/css">
+        .containter-xxl {
+            background-color: hsl(147, 82%, 45%);
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgb(8, 100, 28);
+            color: hsl(187, 83%, 38%);
+        }
+
+        iframe {
+            margin-left: 20px;
+            border-top: 10px solid hsla(138, 58%, 48%, 0.795);
+            border-right: 20px solid hsla(135, 81%, 37%, 0.795);
+            border-left: 20px solid hsla(115, 83%, 21%, 0.795);
+            border-bottom: 20px solid hsla(135, 38%, 60%, 0.986);
+            box-shadow: 5px 5px 10px hsl(138, 87%, 15%);
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Fixed Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-semibold" href="#">Contact Me</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto fw-semibold">
-          <li class="nav-item"><a class="nav-link" href="https://www.usca.edu" target="_blank">USCA Main Website</a></li>
-          <li class="nav-item"><a class="nav-link" href="#assignments">Assignment Area</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact Info</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://developer.mozilla.org/en-US/" target="_blank">MDN Docs</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container-xxl mt-4">
-    <h1 class="mb-4">Welcome to My Feedback Page</h1>
-    <div class="row">
-      <!-- Contact Form -->
-      <div class="col-md-6">
-        <form name="feedback">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="fN" name="fname" placeholder="anonymous" required>
-            <label for="fN">First Name</label>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="lname" name="lname" placeholder="anonymous" required>
-            <label for="lname">Last Name</label>
-          </div>
-
-          <div class="form-floating mb-1">
-            <input type="email" class="form-control" id="mail" name="mail" placeholder="name@domain.com">
-            <label for="mail">Email</label>
-          </div>
-          <small class="form-text text-muted mb-3 d-block">Your email will remain private.</small>
-
-          <div class="mb-3">
-            <label class="form-label">Would you recommend this website?</label><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="recommend" id="yes" value="yes">
-              <label class="form-check-label" for="yes">Yes</label>
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand-lg">
+                    <ul class="navbar nav">
+                        <li class="nav-item"> <a class="nav-link" href="https://www.usca.edu/"> USCA website</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#assingment"> Go to the assignment section</a>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="#contactinfo">Contact info</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="https://www.tiktok.com/@froststorm118">My
+                                tiktok</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="recommend" id="no" value="no">
-              <label class="form-check-label" for="no">No</label>
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="favorite" class="form-label">Favorite Website</label>
-            <select class="form-select form-control" id="favorite" name="favorite">
-              <option value="Google">Google</option>
-              <option value="Facebook">Facebook</option>
-              <option value="Twitter">Twitter</option>
-              <option value="Time">Time</option>
-              <option value="Bluesky">Bluesky</option>
-              <option value="Discord">Discord</option>
-              <option value="Youtube">Youtube</option>
-              <option value="Twitch">Twitch</option>
-              <option value="Ko-fi">Ko-fi</option>
-              <option value="Patreon">Patreon</option>
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Rate this website (1–10)</label>
-            <input type="range" class="form-range" name="rating" min="1" max="10" value="5" list="markers">
-            <datalist id="markers">
-              <option value="2">2</option>
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-            </datalist>
-          </div>
-
-          <div class="mb-3">
-            <label for="comment" class="form-label">Additional Comments</label>
-            <textarea class="form-control" id="comment" name="comment" rows="4" placeholder="I suggest..."></textarea>
-          </div>
-
-          <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
-          </div>
-
-          <div class="mb-3">
-            <label for="website" class="form-label">Website URL</label>
-            <input type="url" class="form-control" id="website" name="website" placeholder="https://example.com">
-          </div>
-
-          <div class="mb-3">
-            <label for="visitDate" class="form-label">Date of Visit</label>
-            <input type="date" class="form-control" id="visitDate" name="visitDate">
-          </div>
-
-          <div class="mb-3">
-            <label for="pet" class="form-label">(Optional) Upload a picture of your pet</label>
-            <input type="file" class="form-control" id="pet" name="pet">
-          </div>
-
-          <div class="mb-3">
-            <input type="submit" class="btn btn-primary" value="Submit Feedback">
-            <input type="reset" class="btn btn-secondary" value="Reset Form">
-          </div>
-        </form>
-      </div>
-
-      <!-- Embedded Video -->
-      <div class="col-md-6">
-        <div class="border p-3">
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
         </div>
-      </div>
+        <div class="row">
+            <div class="col">
+                <h1>Thank you for visiting my website!</h1>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BPANoLv53xE?si=Bc6E7f6GM2oCali2"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="col">
+                <form action=" " name="feedback">
+                    <p> Enter your feedback here</p>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="fname" placeholder="anonymous" required>
+                        <label for="fN"> First Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" name="lname" placeholder="anonymous" required>
+                        <label for="lN"> Last Name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" name="mail" placeholder="name@domain.com" required>
+                        <label for="eM"> Email</label>
+                    </div>
+
+                    <label>
+                        Would you recommend this website?
+                    </label>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" for="yesno"> Yes </label><input type="radio"
+                            class="form-check-input" name="yesno" value="yes" required>
+
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="yesno"> No </label><input type="radio"
+                            class="form-check-input" name="yesno" value="no" required>
+
+                    </div>
+                    <p>
+                        Whats your favorite website?
+                        <select class="form-select" name="website">
+                            <option value="Google">Google</option>
+                            <option value="Bing">Bing</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="TikTok">TikTok</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Reddit">Reddit</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="YouTube">Youtube</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+                    <label for="range1" class="form-label"> Would you rate this website out of 10?</label>
+                    <input type="range" class="form-range" name="rating" min="1" max="10" step="1" value="5"
+                        id="range1"><br>
+
+                    What rating did you give?
+                    <input type="number" name="rating2" min="1" max="10">
+                    <p>
+                        Any additional comments?
+                        <br>
+                        <textarea class="form-control" name="comments" rows="5" cols="40"
+                            placeholder="Enter text here..."></textarea>
+                    </p>
+                    <p>
+                        What is your favorite color?
+                        <input type="color" name="color">
+                    </p>
+                    <p>
+                        What is todays date?
+                        <input type="date" name="dates">
+                    <div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <input type="reset" name="reset" value="Reset Form">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
+</html>
