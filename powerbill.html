@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Georgia Power Bill Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* base */
+    :root {
+      --border: #cfcfcf;
+      --muted: #666666;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --accent: #2b78ff;
+      --accent-ink: #ffffff;
+      --label-w: 420px;
+      --control-w: 160px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: #222;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 24px auto;
+      padding: 0 14px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    @media (min-width: 900px) {
+      .wrap { grid-template-columns: 1fr 1fr; }
+    }
+
+    .panel {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 22px 22px 26px;
+      box-shadow: 0 2px 0 rgba(0,0,0,0.03) inset;
+    }
+
+    h1, h2 {
+      margin: 0 0 14px 0;
+      font-weight: 300;
+      font-size: 2.2rem;
+      color: #444;
+      letter-spacing: 0.3px;
+    }
+
+    p.desc { color: #555; line-height: 1.55; margin: 8px 0 18px; }
+    .muted { color: var(--muted); }
+
+    /* form */
+    
+    .form-row { 
+      margin: 16px 0; 
+      display: grid; 
+      grid-template-columns: var(--label-w) var(--control-w); 
+      justify-content: end; 
+      align-items: center; 
+      column-gap: 16px; 
+      row-gap: 12px; 
+    }
+    label { display: block; margin: 0; }
+    input[type="number"] {
+      width: var(--control-w);
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid #d0d0d0;
+      border-radius: 7px;
+      background: #fff;
+      outline: none;
+    }
+    input[type="number"]:focus-visible { outline: 2px solid #9cc4ff; }
+
+    
+    .inline label { margin: 0; font-size: 0.98rem; color: #444; }
+
+    .btns { display: flex; gap: 12px; margin-top: 10px; justify-content: flex-end; }
+    button {
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 10px 16px;
+      border: 1px solid #2b66e2;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-size: 0.95rem;
+    }
+    button:hover { filter: brightness(0.95); }
+    button.secondary {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #bfbfbf;
+    }
+
+    .form-row > label { text-align: right; }
+    .form-row.inline > label { text-align: right; grid-column: 1; justify-self: end; }
+    .form-row input[type="number"] { justify-self: end; }
+
+    .form-row input[type="checkbox"] { grid-column: 2; justify-self: end; }
+
+    /* table */
+    .table-wrap { border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: #fff; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { background: #f0f0f0; text-align: left; padding: 10px; border-bottom: 1px solid var(--border); font-weight: 600; }
+    tbody td, tfoot td { padding: 10px; border-bottom: 1px solid #e8e8e8; }
+    tbody tr:nth-child(even) td { background: #fbfbfb; }
+    tbody td:first-child { width: 72%; }
+    tfoot td { background: #f5f5f5; font-weight: bold; }
+    tbody tr.section td { border-top: 2px solid #bfbfbf; }
+    tfoot tr:first-child td { border-top: 2px solid #bfbfbf; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- left -->
+    <section class="panel">
+      <h1>Georgia Power Bill Calculator</h1>
+      <p class="desc">
+        The utility bill calculator is a resource that the Commission is making available that allows a consumer to check the accuracy of his/her
+         monthly electric bill. A bill calculator has been prepared for customers of the Georgia Power Company. This bill calculator applies only 
+         to residential customers who are receiving service under the standard Residential Tariff (R-27). For more details regarding Georgia Power's 
+         residential tariff offerings, please visit Georgia Power Pricing &amp; Rates.
+      </p>
+      <p class="muted">Effective August 2023</p>
+
+      <form id="calcForm" novalidate>
+        <div class="form-row">
+          <label for="usage">Enter your Monthly Usage in kilowatt hours (kWh):</label>
+          <input id="usage" name="usage" type="number" step="0.01" min="0" inputmode="decimal" placeholder="e.g. 1000" required />
+        </div>
+
+        <div class="form-row">
+          <label for="days">Enter the number of days for your current billing period:</label>
+          <input id="days" name="days" type="number" step="1" min="1" inputmode="numeric" placeholder="e.g. 30" required />
+        </div>
+
+        <div class="form-row inline">
+          <input id="insideCity" name="insideCity" type="checkbox" />
+          <label for="insideCity">Is your residence INSIDE the city limits of your city?</label>
+        </div>
+
+        <div class="form-row inline">
+          <input id="isSummer" name="isSummer" type="checkbox" />
+          <label for="isSummer">Is this a Summer month (June - September)?</label>
+        </div>
+
+        <div class="form-row">
+          <label for="taxRate">Enter Sales Tax(%):</label>
+          <input id="taxRate" name="taxRate" type="number" step="0.01" min="0" inputmode="decimal" placeholder="optional" />
+        </div>
+
+        <div class="btns">
+          <button type="submit">Submit</button>
+          <button id="resetBtn" class="secondary" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- right -->
+    <section class="panel" aria-live="polite">
+      <h2>Details of your bill</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Items</th><th>Fees</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Base Charge:</td> <td id="baseCharge">0.00</td></tr>
+            <tr><td>Tier 1 Component (kWh):</td> <td id="tier1Amt">0.00</td></tr>
+            <tr><td>Tier 2 Component (kWh):</td> <td id="tier2Amt">0.00</td></tr>
+            <tr><td>Tier 3 Component (kWh):</td> <td id="tier3Amt">0.00</td></tr>
+            <tr class="section"><td><b>Base Revenue -- Base Bill Subtotal:</b></td> <td id="baseRevenue"><b>0.00</b></td></tr>
+            <tr><td>Fuel Cost Rider:</td> <td id="fuelCost">0.00</td></tr>
+            <tr><td>Demand Side Management Residential Rider:</td> <td id="dsm">0.00</td></tr>
+            <tr><td>Nuclear Construction Cost Recovery Rider:</td> <td id="nuclear">0.00</td></tr>
+            <tr><td>Environmental Compliance Cost Recovery Rider:</td> <td id="env">0.00</td></tr>
+            <tr class="section"><td><b>Total Revenue -- Current Service Subtotal:</b></td> <td id="totalRevenue"><b>0.00</b></td></tr>
+            <tr><td>Franchise Fee:</td> <td id="franchise">0.00</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>Total (excluding tax):</td> <td id="totalBeforeTax">0.00</td></tr>
+            <tr><td>TOTAL (w/ tax) :</td> <td id="grandTotal">0.00</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // constants
+    const BASE_CHARGE_PER_DAY = 0.4603;
+    const SUMMER_RATES = { tier1: 0.066678, tier2: 0.110748, tier3: 0.114625 };
+    const WINTER_RATES = { tier1: 0.062404, tier2: 0.062404, tier3: 0.062404 };
+    const FUEL_RIDER = { summer: 0.045876, winter: 0.042859 };
+    const PCT = { dsm: 0.015989, nuclear: 0.041562, env: 0.162813 };
+    const FRANCHISE = { inside: 0.030674, outside: 0.011839 };
+
+    // nodes
+    const els = {
+      usage: document.getElementById('usage'),
+      days: document.getElementById('days'),
+      insideCity: document.getElementById('insideCity'),
+      isSummer: document.getElementById('isSummer'),
+      taxRate: document.getElementById('taxRate'),      baseCharge: document.getElementById('baseCharge'),
+      tier1Amt: document.getElementById('tier1Amt'),
+      tier2Amt: document.getElementById('tier2Amt'),
+      tier3Amt: document.getElementById('tier3Amt'),
+      baseRevenue: document.getElementById('baseRevenue'),
+      fuelCost: document.getElementById('fuelCost'),
+      dsm: document.getElementById('dsm'),
+      nuclear: document.getElementById('nuclear'),
+      env: document.getElementById('env'),
+      totalRevenue: document.getElementById('totalRevenue'),
+      franchise: document.getElementById('franchise'),
+      totalBeforeTax: document.getElementById('totalBeforeTax'),
+      grandTotal: document.getElementById('grandTotal'),
+      form: document.getElementById('calcForm')
+    };
+
+    // helpers
+    const toMoney = (n) => (isNaN(n) ? 0 : n).toFixed(2);
+
+    function tierBreakdown(kwh, isSummer) {
+      const r = isSummer ? SUMMER_RATES : WINTER_RATES;
+      const t1kwh = Math.max(0, Math.min(650, kwh));
+      const t2kwh = Math.max(0, Math.min(350, kwh - 650));
+      const t3kwh = Math.max(0, kwh - 1000);
+      return {        tier1: t1kwh * r.tier1,
+        tier2: t2kwh * r.tier2,
+        tier3: t3kwh * r.tier3
+      };
+    }
+    // calc
+    function computeBill({ usage, days, insideCity, isSummer, taxRate }) {
+      const baseCharge = days * BASE_CHARGE_PER_DAY;
+      const tiers = tierBreakdown(usage, isSummer);
+      const baseRevenue = baseCharge + tiers.tier1 + tiers.tier2 + tiers.tier3;
+
+      const fuel = usage * (isSummer ? FUEL_RIDER.summer : FUEL_RIDER.winter);
+      const dsm = baseRevenue * PCT.dsm;
+      const nuclear = baseRevenue * PCT.nuclear;
+      const env = baseRevenue * PCT.env;
+
+      const totalRevenue = baseRevenue + fuel + dsm + nuclear + env;
+      const franchise = totalRevenue * (insideCity ? FRANCHISE.inside : FRANCHISE.outside);
+      const totalBeforeTax = totalRevenue + franchise;
+
+      const taxAmt = (Number.isFinite(taxRate) && taxRate > 0)
+        ? totalBeforeTax * (taxRate / 100)
+        : 0;
+      const grandTotal = totalBeforeTax + taxAmt;
+
+      return {
+        baseCharge, ...tiers, baseRevenue,
+        fuel, dsm, nuclear, env,
+        totalRevenue, franchise, totalBeforeTax,
+        grandTotal
+      };
+    }
+
+    function renderBill(result) {
+      els.baseCharge.textContent = toMoney(result.baseCharge);
+      els.tier1Amt.textContent   = toMoney(result.tier1);
+      els.tier2Amt.textContent   = toMoney(result.tier2);
+      els.tier3Amt.textContent   = toMoney(result.tier3);
+      els.baseRevenue.textContent = toMoney(result.baseRevenue);
+      els.fuelCost.textContent   = toMoney(result.fuel);
+      els.dsm.textContent        = toMoney(result.dsm);
+      els.nuclear.textContent    = toMoney(result.nuclear);
+      els.env.textContent        = toMoney(result.env);
+      els.totalRevenue.textContent = toMoney(result.totalRevenue);
+      els.franchise.textContent    = toMoney(result.franchise);
+      els.totalBeforeTax.textContent = toMoney(result.totalBeforeTax);
+      els.grandTotal.textContent     = toMoney(result.grandTotal);
+    }
+
+    function resetOutputs() { [
+        'baseCharge','tier1Amt','tier2Amt','tier3Amt','baseRevenue',
+        'fuelCost','dsm','nuclear','env','totalRevenue','franchise',
+        'totalBeforeTax','grandTotal'
+      ].forEach(id => (document.getElementById(id).textContent = '0.00'));
+    }
+
+    // events
+    els.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const usage = parseFloat(els.usage.value);
+      const days = parseFloat(els.days.value);
+      const insideCity = !!els.insideCity.checked;
+      const isSummer = !!els.isSummer.checked;
+      const taxRate = parseFloat(els.taxRate.value);
+
+      if (!Number.isFinite(usage) || usage < 0) {
+        alert('Please enter a valid kWh usage.');
+        return;
+      }
+      if (!Number.isFinite(days) || days <= 0) {
+        alert('Please enter a valid number of days.');
+        return;
+      }      const result = computeBill({ usage, days, insideCity, isSummer, taxRate });
+      renderBill(result);
+
+      // open link if greater than $500
+      if (result.grandTotal > 500) {
+        window.open(
+          'https://www.georgiapower.com/residential/save-money-and-energy/products-programs.html',
+          '_blank'
+        );
+      }
+    });
+    els.form.addEventListener('reset', () => { resetOutputs(); });
+
+    // init
+    resetOutputs();
+  </script>
+</body>
+</html>
